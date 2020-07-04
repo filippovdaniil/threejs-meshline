@@ -117,7 +117,7 @@ void main() {
   ${ShaderChunk.fog_fragment}
 }`;
 
-export class MeshLineMaterial extends ShaderMaterial {
+export default class MeshLineMaterial extends ShaderMaterial {
   constructor(parameters) {
     super({
       uniforms: Object.assign({}, UniformsLib.fog, {

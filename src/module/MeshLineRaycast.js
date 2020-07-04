@@ -6,7 +6,7 @@ import {
   LineSegments,
 } from 'three';
 
-export function MeshLineRaycast(raycaster, intersects) {
+export default function MeshLineRaycast(raycaster, intersects) {
   const inverseMatrix = new Matrix4();
   const ray = new Ray();
   const sphere = new Sphere();

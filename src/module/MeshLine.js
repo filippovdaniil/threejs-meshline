@@ -9,7 +9,7 @@ import MeshLineRaycast from './MeshLineRaycast';
 import memcpy from './memcpy';
 
 
-export class MeshLine extends BufferGeometry {
+export default class MeshLine extends BufferGeometry {
   constructor() {
     super();
     this.type = 'MeshLine';
