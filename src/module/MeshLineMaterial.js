@@ -143,137 +143,158 @@ export class MeshLineMaterial extends ShaderMaterial {
 
     this.type = 'MeshLineMaterial';
     this.isMeshLineMaterial = true;
+
+    Object.defineProperties(this, {
+      lineWidth: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.lineWidth.value;
+        },
+        set: function(value) {
+          this.uniforms.lineWidth.value = value;
+        },
+      },
+      map: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.map.value;
+        },
+        set: function(value) {
+          this.uniforms.map.value = value;
+        },
+      },
+      useMap: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.useMap.value;
+        },
+        set: function(value) {
+          this.uniforms.useMap.value = value;
+        },
+      },
+      alphaMap: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.alphaMap.value;
+        },
+        set: function(value) {
+          this.uniforms.alphaMap.value = value;
+        },
+      },
+      useAlphaMap: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.useAlphaMap.value;
+        },
+        set: function(value) {
+          this.uniforms.useAlphaMap.value = value;
+        },
+      },
+      color: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.color.value;
+        },
+        set: function(value) {
+          this.uniforms.color.value = value;
+        },
+      },
+      opacity: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.opacity.value;
+        },
+        set: function(value) {
+          this.uniforms.opacity.value = value;
+        },
+      },
+      resolution: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.resolution.value;
+        },
+        set: function(value) {
+          this.uniforms.resolution.value.copy(value);
+        },
+      },
+      sizeAttenuation: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.sizeAttenuation.value;
+        },
+        set: function(value) {
+          this.uniforms.sizeAttenuation.value = value;
+        },
+      },
+      dashArray: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.dashArray.value;
+        },
+        set: function(value) {
+          this.uniforms.dashArray.value = value;
+          this.useDash = value !== 0 ? 1 : 0;
+        },
+      },
+      dashOffset: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.dashOffset.value;
+        },
+        set: function(value) {
+          this.uniforms.dashOffset.value = value;
+        },
+      },
+      dashRatio: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.dashRatio.value;
+        },
+        set: function(value) {
+          this.uniforms.dashRatio.value = value;
+        },
+      },
+      useDash: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.useDash.value;
+        },
+        set: function(value) {
+          this.uniforms.useDash.value = value;
+        },
+      },
+      visibility: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.visibility.value;
+        },
+        set: function(value) {
+          this.uniforms.visibility.value = value;
+        },
+      },
+      alphaTest: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.alphaTest.value;
+        },
+        set: function(value) {
+          this.uniforms.alphaTest.value = value;
+        },
+      },
+      repeat: {
+        enumerable: true,
+        get: function() {
+          return this.uniforms.repeat.value;
+        },
+        set: function(value) {
+          this.uniforms.repeat.value.copy(value);
+        },
+      },
+    });
+
     this.setValues(parameters);
   }
 
-  get lineWidth() {
-    return this.uniforms.lineWidth.value;
-  }
-
-  set lineWidth(value) {
-    this.uniforms.lineWidth.value = value;
-  }
-
-  get map() {
-    return this.uniforms.map.value;
-  }
-
-  set map(value) {
-    this.uniforms.map.value = value;
-  }
-
-  get useMap() {
-    return this.uniforms.useMap.value;
-  }
-
-  set useMap(value) {
-    this.uniforms.useMap.value = value;
-  }
-
-  get alphaMap() {
-    return this.uniforms.alphaMap.value;
-  }
-
-  set alphaMap(value) {
-    this.uniforms.alphaMap.value = value;
-  }
-
-  get useAlphaMap() {
-    return this.uniforms.useAlphaMap.value;
-  }
-
-  set useAlphaMap(value) {
-    this.uniforms.useAlphaMap.value = value;
-  }
-
-  get color() {
-    return this.uniforms.color.value;
-  }
-
-  set color(value) {
-    this.uniforms.color.value = value;
-  }
-
-  get opacity() {
-    return this.uniforms.opacity.value;
-  }
-
-  set opacity(value) {
-    this.uniforms.opacity.value = value;
-  }
-
-  get resolution() {
-    return this.uniforms.resolution.value;
-  }
-
-  set resolution(value) {
-    this.uniforms.resolution.value.copy(value);
-  }
-
-  get sizeAttenuation() {
-    return this.uniforms.sizeAttenuation.value;
-  }
-
-  set sizeAttenuation(value) {
-    this.uniforms.sizeAttenuation.value = value;
-  }
-
-  get dashArray() {
-    return this.uniforms.dashArray.value;
-  }
-
-  set dashArray(value) {
-    this.uniforms.dashArray.value = value;
-    this.useDash = value !== 0 ? 1 : 0;
-  }
-
-  get dashOffset() {
-    return this.uniforms.dashOffset.value;
-  }
-
-  set dashOffset(value) {
-    this.uniforms.dashOffset.value = value;
-  }
-
-  get dashRatio() {
-    return this.uniforms.dashRatio.value;
-  }
-
-  set dashRatio(value) {
-    this.uniforms.dashRatio.value = value;
-  }
-
-  get useDash() {
-    return this.uniforms.useDash.value;
-  }
-
-  set useDash(value) {
-    this.uniforms.useDash.value = value;
-  }
-
-  get visibility() {
-    return this.uniforms.visibility.value;
-  }
-
-  set visibility(value) {
-    this.uniforms.visibility.value = value;
-  }
-
-  get alphaTest() {
-    return this.uniforms.alphaTest.value;
-  }
-
-  set alphaTest(value) {
-    this.uniforms.alphaTest.value = value;
-  }
-
-  get repeat() {
-    return this.uniforms.repeat.value;
-  }
-
-  set repeat(value) {
-    this.uniforms.repeat.value.copy(value);
-  }
 
   copy(source) {
     super.copy(source);
