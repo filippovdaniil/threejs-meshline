@@ -22,6 +22,7 @@
     "README.md",
     "src/index.js"
   ],
+  "module": "src/module/index.js",
   "author": "Jaume Sanchez <the.spite@gmail.com> (https://www.clicktorelease.com)",
   "license": "MIT",
   "bugs": {
