@@ -1,4 +1,4 @@
-export default function memcpy(src, srcOffset, dst, dstOffset, length) {
+export function memcpy(src, srcOffset, dst, dstOffset, length) {
   let i;
   src = src.subarray || src.slice ? src : src.buffer;
   dst = dst.subarray || dst.slice ? dst : dst.buffer;

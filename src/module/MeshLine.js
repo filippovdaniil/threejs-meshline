@@ -1,15 +1,13 @@
-import {
-  Matrix4,
-  Geometry,
-  BufferGeometry,
-  BufferAttribute,
-} from 'three';
+import { Matrix4 } from 'three/src/math/Matrix4';
+import { Geometry } from 'three/src/core/Geometry';
+import { BufferGeometry } from 'three/src/core/BufferGeometry';
+import { BufferAttribute } from 'three/src/core/BufferAttribute';
 
-import MeshLineRaycast from './MeshLineRaycast';
-import memcpy from './memcpy';
+import { MeshLineRaycast } from './MeshLineRaycast';
+import { memcpy } from './memcpy';
 
 
-export default class MeshLine extends BufferGeometry {
+export class MeshLine extends BufferGeometry {
   constructor() {
     super();
     this.type = 'MeshLine';

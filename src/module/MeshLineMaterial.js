@@ -1,10 +1,9 @@
-import {
-  Vector2,
-  Color,
-  UniformsLib,
-  ShaderChunk,
-  ShaderMaterial,
-} from 'three';
+import { Vector2 } from 'three/src/math/Vector2';
+import { Color } from 'three/src/math/Color';
+import { UniformsLib } from 'three/src/renderers/shaders/UniformsLib';
+import { ShaderChunk } from 'three/src/renderers/shaders/ShaderChunk';
+import { ShaderMaterial } from 'three/src/materials/ShaderMaterial'
+
 
 ShaderChunk.meshline_vert = `
 
@@ -117,7 +116,7 @@ void main() {
   ${ShaderChunk.fog_fragment}
 }`;
 
-export default class MeshLineMaterial extends ShaderMaterial {
+export class MeshLineMaterial extends ShaderMaterial {
   constructor(parameters) {
     super({
       uniforms: Object.assign({}, UniformsLib.fog, {

@@ -1,12 +1,11 @@
-import {
-  Vector3,
-  Matrix4,
-  Sphere,
-  Ray,
-  LineSegments,
-} from 'three';
+import { Vector3 } from 'three/src/math/Vector3';
+import { Matrix4 } from 'three/src/math/Matrix4';
+import { Sphere } from 'three/src/math/Sphere';
+import { Ray } from 'three/src/math/Ray';
+import { LineSegments } from 'three/src/objects/LineSegments';
 
-export default function MeshLineRaycast(raycaster, intersects) {
+
+export function MeshLineRaycast(raycaster, intersects) {
   const inverseMatrix = new Matrix4();
   const ray = new Ray();
   const sphere = new Sphere();
