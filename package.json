@@ -20,7 +20,8 @@
     "LICENSE",
     "History.md",
     "README.md",
-    "src/index.js"
+    "src/index.js",
+    "src/module"
   ],
   "module": "src/module/index.js",
   "author": "Jaume Sanchez <the.spite@gmail.com> (https://www.clicktorelease.com)",
